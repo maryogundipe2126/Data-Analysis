@@ -1,5 +1,12 @@
 MARY_OGUNDIPE_DATA_ANALYTICS_SQL_SECOND_ASSIGNMENT.
 
+
+/* DAMILARE'S COMMENT:
+Mary, This does not work at all. 
+Did you try running the query?
+*/
+
+
 -- Q1 the country with the highest and lowest apperance --
 WITH all_world_cup as (
 	SELECT
@@ -90,6 +97,11 @@ FROM
 	all_world_cup
 WHERE
 	game_played IN ( 3,7)
+	
+/* DAMILARE'S COMMENT:
+Mary, What does this WHERE clause do?
+*/
+
 GROUP BY
 	team;
 
