@@ -82,16 +82,17 @@ FROM
 		
 		
 SELECT
-	DISTINCT
 	team,
 	MIN(game_played)AS lowest_game_played ,
 	MAX(game_played) AS highest_game_played
 FROM
 	all_world_cup
-WHERE
-	game_played IN ( 3,7)
 GROUP BY
-	team;
+	team
+HAVING
+	MIN(game_played) = 3
+	AND 
+	MAX(game_played)  = 7;
 
 
 -- Q3 the country with the hihest and lowest game won --
@@ -130,16 +131,19 @@ FROM
 		
 		
 SELECT
-	DISTINCT
 	team,
 	MIN(win)AS lowest_game_won ,
 	MAX(win) AS highest_game_won
 FROM
 	all_world_cup
-WHERE
-	win IN ( 0, 7)
+
 GROUP BY
-	team;
+	team
+HAVING 
+	MIN(win) = 0
+	AND
+	MAX(win) = 7;
+
 
 
 -- Q4 the country with the highest and lowest game lost --
@@ -178,17 +182,19 @@ FROM
 		
 		
 SELECT
-	DISTINCT
 	team,
 	MIN(loss)AS lowest_game_lost ,
 	MAX(loss) AS highest_game_lost
 	
 FROM
 	all_world_cup
-WHERE
-	loss IN ( 0, 3)
+
 GROUP BY
-	team;
+	team
+HAVING 
+	MIN(loss) = 0
+	AND
+	MAX(loss) = 3;
 
 	
 	-- Q5 country  with the highest and lowest goalsfor --
@@ -235,10 +241,13 @@ SELECT
 	
 FROM
 	all_world_cup
-WHERE
-	goalsfor IN ( 0, 18)
 GROUP BY
-	team;
+	team
+HAVING 
+	MIN(goalsfor) = 0
+	AND
+	MAX(goalsfor) = 18;
+
 
 
 -- Q6 country with the lowest and highest goals against --
@@ -277,17 +286,19 @@ FROM
 		
 		
 SELECT
-	DISTINCT
 	team,
 	MIN(goalsagainst)AS lowest_goals_against ,
 	MAX(goalsagainst) AS highest_goals_against
 	
 FROM
 	all_world_cup
-WHERE
-	goalsagainst IN ( 0, 14)
 GROUP BY
-	team;
+	team
+HAVING
+	MIN(goalsagainst) = 0
+	AND 
+	MAX(goalsagainst) = 14;
+
 
 -- Q7  country with the lowest a nd highest goal difference --
 
@@ -325,17 +336,19 @@ FROM
 		
 		
 SELECT
-	DISTINCT
 	team,
 	MIN(goalsdifference)AS lowest_goals_difference ,
 	MAX(goalsdifference) AS highest_goals_difference
 	
 FROM
 	all_world_cup
-WHERE
-	goalsdifference IN ( -12, 14)
 GROUP BY
-	team;
+	team
+HAVING
+	MIN(goalsdifference) = -12
+	AND 
+	MAX(goalsdifference) = 14;
+
 
 -- Q8 country with the highest and lowest points --
 
@@ -373,17 +386,19 @@ FROM
 		
 		
 SELECT
-	DISTINCT
 	team,
 	MIN(points)AS lowest_points ,
 	MAX(points) AS highest_points
 	
 FROM
 	all_world_cup
-WHERE
-	points IN ( 0, 21)
 GROUP BY
-	team;
+	team
+HAVING
+	MIN(points) = 0
+	AND 
+	MAX(points) = 21;
+
 
 
 
